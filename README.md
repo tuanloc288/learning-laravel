@@ -22,6 +22,12 @@ Tech using: Laravel, Mysql (phpmyadmin), Tailwindcss
 
 **Laravel**
 
+### Cloning the repository
+
+```shell
+git clone https://github.com/tuanloc288/learning-laravel.git
+```
+
 ### Database set up
 1. First you will have to create a database on phpmyadmin with whatever name you like
 2. Then create an .env file with all the same variable from .env.example
