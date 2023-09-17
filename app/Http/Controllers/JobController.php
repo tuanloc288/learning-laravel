@@ -69,7 +69,7 @@ class JobController extends Controller
     public function update(Request $request, Job $job)
     {
         // make sure logged in user is the owner
-        if($job->user_id === auth()->id()){
+        if($job->user_id !== auth()->id()){
             abort(403, 'Unauthorized action');
         }
 
@@ -96,7 +96,7 @@ class JobController extends Controller
     // delete job
     public function delete(Job $job)
     {
-        if($job->user_id === auth()->id()){
+        if($job->user_id !== auth()->id()){
             abort(403, 'Unauthorized action');
         }
         
