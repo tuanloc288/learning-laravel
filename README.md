@@ -19,13 +19,14 @@ Tech using: Laravel, Mysql (phpmyadmin), Tailwindcss
 ### Prerequisites
 
 **Composer**
+
 **Laravel**
 
 ### Database set up
-First you will have to create a database on phpmyadmin with whatever name you like
-Then create an .env file with all the same variable from .env.example
-Change the value of DB_DATABASE to the db name that you have created  
-After that run the command below 
+1. First you will have to create a database on phpmyadmin with whatever name you like
+2. Then create an .env file with all the same variable from .env.example
+3. Change the value of DB_DATABASE to the db name that you have created  
+4. After that run the command below 
 
 ```shell
 php artisan migrate
