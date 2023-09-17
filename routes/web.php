@@ -36,6 +36,32 @@ Route::get('/jobs/manage', [JobController::class, 'manage'])->middleware('auth')
 // need to be on the top cuz {job} will take all 
 // like nextjs 13 folder route [...]
 Route::get('/jobs/{job}', [JobController::class, 'show']);
+/* 
+    The line above equal to
+    Route::get('/jobs/{id}', function($id){
+        $job = Job::find($id)
+
+        if($job){
+            return view("show", [
+                'job' => $job
+            ])
+        } else {
+            abort('404')
+        }
+    });
+
+    Another alternative way is Route model binding
+    Route::get('/jobs/{job}', function(Job $job){
+         return view("show", [
+            'job' => $job
+        ])
+    });
+
+    Keep in mind that you have to match the parameter with what ever inside the route .../{ThisThingHere}
+    And by using route model binding, it will automatically check if the id exists and return 404 if it does not 
+
+    The callback function has been split to JobController, that why we using [JobController::class, 'show'] here
+*/
 
 // show register/create account form
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
